@@ -1,11 +1,86 @@
-.to-do-list{
-    font-family: monospace;
-    text-align: center;
-    margin-top: 100px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+  --main-color: #8758ff;
+  --sub-color: #1a1a40;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1{font-size: 30px;}
+body {
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+h1 {
+  font-size: 40px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+button {
+  background: #8758ff;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  font-size: 17px;
+  border-radius: 3px;
+}
 
-button{
-    
+li {
+  font-size: 18px;
+  padding: 15px;
+  background-color: rgb(57, 9, 133);
+  margin-bottom: 10px;
+  border-radius:8px;
+  display: flex;
+  align-items: center;
+  }
+
+
+.to-do-list-container {
+  margin-top: 200px;
+  background: #1a1a40;
+  margin-top: 100px;
+  padding: 38px;
+  border-radius: 5px;
+}
+.TodoForm {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #8758ff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #fff;
+}
+.todo-input::placeholder {
+  color: #ffffff4d;
+  font-size: 17px;
+}
+
+.delete-button {
+  background-color: #a18adb;
+}
+.move-button {
+  background-color: #c8bbea;
+}
+.text{
+   flex:1; 
+}
+
+.delete-button, .move-button{
+    padding: 10px 12px;
+    font-size: 15px;
+    margin-left: 10px;
 }

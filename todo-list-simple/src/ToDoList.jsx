@@ -14,25 +14,27 @@ const ToDoList = () => {
   const moveTaskDown = (index) => {};
 
   return (
-    <div className="to-do-list">
-      <h1>ToDo List</h1>
-      <div>
-        <input type="text" placeholder="Enter a task..." value={newTask} onChange={handleTaskInput} />
-        <button className="add-button" onClick={addTask}>
-          Add task
-        </button>
+    <div className="to-do-list-container">
+      <h1>ToDo List 📋</h1>
+      <div className="input-container">
+        <form className="TodoForm">
+          <input type="text" placeholder="What is the task today?" value={newTask} onChange={handleTaskInput} className="todo-input" />
+          <button className="todo-btn" onClick={addTask}>
+            Add task
+          </button>
+        </form>
       </div>
       <ol>
         {tasks.map((task, index) => (
           <li key={index}>
             <span className="text">{task}</span>
-            <button className="delete-task" onClick={() => moveTaskDown(index)}>
+            <button className="delete-button" onClick={() => moveTaskDown(index)}>
               Delete
             </button>
-            <button className="move-task-up" onClick={() => moveTaskUp(index)}>
+            <button className="move-button" onClick={() => moveTaskUp(index)}>
               👆 Up
             </button>
-            <button className="move-task-down" onClick={() => moveTaskUp(index)}>
+            <button className="move-button" onClick={() => moveTaskUp(index)}>
               👇 Down
             </button>
           </li>
