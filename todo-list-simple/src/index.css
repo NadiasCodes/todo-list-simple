@@ -50,10 +50,7 @@ li {
   padding: 38px;
   border-radius: 5px;
 }
-.TodoForm {
-  width: 100%;
-  margin-bottom: 1rem;
-}
+
 .todo-input {
   outline: none;
   background: none;
