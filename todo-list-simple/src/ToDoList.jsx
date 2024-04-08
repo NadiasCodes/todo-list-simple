@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ToDoList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
+  
   const handleTaskInput = (e) => {
     setNewTask(e.target.value);
   };
@@ -31,13 +32,14 @@ const ToDoList = () => {
       setTasks(movingTasks);
     }
   };
-  const moveTaskDown = (index) => {
-    if (index < tasks.length - 1) {
-      const movingTasks = [...tasks];
-      [movingTasks[index], movingTasks[index + 1]] = [movingTasks[index + 1], movingTasks[index]];
-      setTasks(movingTasks);
-    }
-  };
+ const moveTaskDown = (index) => {
+  if (index < tasks.length - 1) {
+    const movingTask = [...tasks];
+    [movingTask[index], movingTask[index + 1]] = [movingTask[index + 1], movingTask[index]];
+    setTasks(movingTask);
+  }
+};
+
 
   return (
     <div className="to-do-list-container">
