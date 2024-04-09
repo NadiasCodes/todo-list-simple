@@ -4,7 +4,16 @@ const ToDoList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
-  
+  useEffect(() => {
+    if (tasks.length === 0) return;
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  useEffect(() => {
+    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    setTasks(tasks);
+  }, []);
+
   const handleTaskInput = (e) => {
     setNewTask(e.target.value);
   };
@@ -32,14 +41,13 @@ const ToDoList = () => {
       setTasks(movingTasks);
     }
   };
- const moveTaskDown = (index) => {
-  if (index < tasks.length - 1) {
-    const movingTask = [...tasks];
-    [movingTask[index], movingTask[index + 1]] = [movingTask[index + 1], movingTask[index]];
-    setTasks(movingTask);
-  }
-};
-
+  const moveTaskDown = (index) => {
+    if (index < tasks.length - 1) {
+      const movingTask = [...tasks];
+      [movingTask[index], movingTask[index + 1]] = [movingTask[index + 1], movingTask[index]];
+      setTasks(movingTask);
+    }
+  };
 
   return (
     <div className="to-do-list-container">
